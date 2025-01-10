@@ -17,8 +17,8 @@ void    PhoneBook::AddContact() {
     if (this->index == 8)
         this->index = 0;
     std::cout << "Insert First Name" << std::endl;
-    while (true) {
-        std::getline(std::cin, input);  // Use std::getline to allow spaces in names
+	while (true) {
+        std::getline(std::cin, input);
         if (input.empty()) {
             std::cout << "First name cannot be empty. Please try again: ";
         } else {
@@ -27,7 +27,7 @@ void    PhoneBook::AddContact() {
         }
     }
     std::cout << "Insert Last Name" << std::endl;
-     while (true) {
+    while (true) {
         std::getline(std::cin, input);
         if (input.empty()) {
             std::cout << "Last name cannot be empty. Please try again: ";
@@ -37,8 +37,8 @@ void    PhoneBook::AddContact() {
         }
     }
     std::cout << "Insert Nick Name" << std::endl;
-     while (true) {
-        std::getline(std::cin, input);  // Use std::getline to allow spaces in names
+    while (true) {
+        std::getline(std::cin, input);
         if (input.empty()) {
             std::cout << "Nickname cannot be empty. Please try again: ";
         } else {
@@ -47,8 +47,8 @@ void    PhoneBook::AddContact() {
         }
     }
     std::cout << "Insert Phone Number" << std::endl;
-     while (true) {
-        std::getline(std::cin, input);  // Use std::getline to allow spaces in names
+    while (true) {
+        std::getline(std::cin, input);
         if (input.empty()) {
             std::cout << "Phone number cannot be empty. Please try again: ";
         } else {
@@ -57,8 +57,8 @@ void    PhoneBook::AddContact() {
         }
     }
     std::cout << "Insert Darkest Secret" << std::endl;
-     while (true) {
-        std::getline(std::cin, input);  // Use std::getline to allow spaces in names
+    while (true) {
+        std::getline(std::cin, input);
         if (input.empty()) {
             std::cout << "Darkest Secret cannot be empty. Please try again: ";
         } else {
@@ -100,6 +100,7 @@ bool  PhoneBook::isValid(int index) {
 
 void  PhoneBook::SearchContact() {
   int input;
+  std::string input_;
   std::cout << std::right << "| ";
   PrintColumn("Index");
   PrintColumn("First Name");
@@ -111,8 +112,15 @@ void  PhoneBook::SearchContact() {
     PrintList(i);
     std::cout << std::endl;
   }
-  std::cout << "What contact do you wanna access" << std::endl;
-  std::cin >> input;
+  while (true) {
+	std::getline(std::cin, input_);
+	if (input_.empty())
+	       std::cout << "Empty space is not an index. PLease try again: ";
+    else {
+        this->contact[this->index].SetDarkestSecret(input_);
+        break;
+    }	
+  }
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   if (std::cin.fail() || input < 0) {
     std::cin.clear();
