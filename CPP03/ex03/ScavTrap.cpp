@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:04:59 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/13 12:05:00 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/13 13:12:30 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/13 16:29:18 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ ScavTrap::ScavTrap(): ClapTrap() {
     _hitpoints = 100;
     _energypoints = 50;
     _attackdamage = 20;
-    _name = "Empty";
     std::cout << "Default constructor called for ScavTrap "
     << std::endl;
 }

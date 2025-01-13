@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:05:13 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/13 12:05:14 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/13 12:04:20 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/13 12:05:52 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name),  _hitpoints(10), _energypoints(10), _attackdamage(0) {
-    std::cout << "Better Constructor called for ClapTrap " << _name << std::endl;
+    std::cout << "Name Constructor called for ClapTrap " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
@@ -87,8 +87,8 @@ void    ClapTrap::beRepaired(unsigned int amount) {
         << " is repaired for " << amount
         << " health points" << std::endl;
         this->_hitpoints += amount;
-    if (this->_hitpoints > 10)
-        this->_hitpoints = 10;
+    if (this->_hitpoints > 100)
+        this->_hitpoints = 100;
     this->_energypoints -= amount;
     std::cout << "ClapTrap " << _name
     << " has now " << _hitpoints

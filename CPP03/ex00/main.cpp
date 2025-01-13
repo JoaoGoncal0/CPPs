@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 12:05:21 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/13 12:24:36 by jomendes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 int main(void){
@@ -10,6 +22,7 @@ int main(void){
 
     std::string enemy = "Shigaraki";
 
+	std::cout << "\n                 -Start of the Battle-\n" << std::endl;
     while(Hero1.getHitPoints() > 0)
     {
         Hero1.attack(enemy);
@@ -18,5 +31,6 @@ int main(void){
             break;
         Hero1.beRepaired(2);
     }
+	std::cout << "\n                 -End of the Battle-\n" << std::endl;
     return (0);
 }

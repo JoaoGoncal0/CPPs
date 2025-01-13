@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:05:17 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/13 12:05:18 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/13 13:12:13 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/13 16:01:38 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class   ClapTrap {
 
-private:
+protected:
     std::string _name;
     unsigned int _hitpoints;
     unsigned int _energypoints;
@@ -26,9 +26,9 @@ private:
 public:
     ClapTrap();
     ClapTrap(std::string name);
-    ~ClapTrap();
     ClapTrap(const ClapTrap &copy);
     ClapTrap& operator=(const ClapTrap &other);
+    ~ClapTrap();
 
     void    attack(const std::string &target);
     void    takeDamage(unsigned int amount);

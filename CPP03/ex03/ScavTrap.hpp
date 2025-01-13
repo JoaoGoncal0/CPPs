@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:05:03 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/13 12:05:04 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/13 13:12:33 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/13 17:20:37 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class   ScavTrap : public ClapTrap {
+class   ScavTrap : virtual public ClapTrap {
 
 public:
     ScavTrap();
