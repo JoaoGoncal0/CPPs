@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongWrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 15:41:15 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/14 15:41:16 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/14 15:44:53 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/14 17:08:53 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
     return (*this);
 }
 
-std::string WrongAnimal::getType() const {
-    return (_type);
+void WrongAnimal::makeSound() const {
+    std::cout << "WrongAnimal makes a sound!" << std::endl;
 }
 
-void WrongAnimal::makeSound() const {
-    std::cout << "WrongAnimal sound!" << std::endl;
+std::string WrongAnimal::getType() const {
+    return (_type);
 }
