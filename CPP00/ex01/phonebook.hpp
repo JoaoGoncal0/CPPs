@@ -19,7 +19,6 @@ class   PhoneBook {
         int     index;
         int     max;
 
-        bool    isValid(int index);
         void    AddContact(void);
         void    SearchContact(void);
         void    ExitProgram(void);
