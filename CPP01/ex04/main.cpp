@@ -9,6 +9,10 @@ int main(int ac, char **av)
         std::string  file_name = av[1];
         std::string  s1 = av[2];
         std::string  s2 = av[3];
+        if (s1 == "" || s2 == "") {
+            std::cout << "Wrong input" << std::endl;
+            return (-1);
+        }
         size_t found = 0;
         file.open(av[1], std::ios::in);
         if (!file)
