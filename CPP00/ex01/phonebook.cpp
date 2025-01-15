@@ -10,6 +10,13 @@ PhoneBook::~PhoneBook(void) {
     std::cout << "PhoneBook deleted" << std::endl;
 }
 
+int		check_input(std::string input) {
+	for (int i = 0; i < input.length(); ++i)
+		if (!isalnum(input[i]))
+			return (1);
+	return (0);
+}
+
 void    PhoneBook::AddContact() {
 
     std::string input;
@@ -19,9 +26,9 @@ void    PhoneBook::AddContact() {
     std::cout << "Insert First Name" << std::endl;
 	while (true) {
         std::getline(std::cin, input);
-        if (std::cin.eof())
+        if (std::cin.eof() )
 			    exit(0);
-        if (input.empty()) {
+        if (input.empty() || check_input(input) == 1) {
             std::cout << "First name cannot be empty. Please try again: ";
         } else {
             this->contact[this->index].SetFirstName(input);
@@ -33,7 +40,7 @@ void    PhoneBook::AddContact() {
         std::getline(std::cin, input);
         if (std::cin.eof())
 			    exit(0);
-        if (input.empty()) {
+        if (input.empty() || check_input(input) == 1) {
             std::cout << "Last name cannot be empty. Please try again: ";
         } else {
             this->contact[this->index].SetLastName(input);
@@ -45,7 +52,7 @@ void    PhoneBook::AddContact() {
         std::getline(std::cin, input);
         if (std::cin.eof())
 			    exit(0);
-        if (input.empty()) {
+        if (input.empty() || check_input(input) == 1) {
             std::cout << "Nickname cannot be empty. Please try again: ";
         } else {
             this->contact[this->index].SetNickname(input);
@@ -57,7 +64,7 @@ void    PhoneBook::AddContact() {
         std::getline(std::cin, input);
         if (std::cin.eof())
 			    exit(0);
-        if (input.empty()) {
+        if (input.empty() || check_input(input) == 1) {
             std::cout << "Phone number cannot be empty. Please try again: ";
         } else {
             this->contact[this->index].SetPhoneNumber(input);
@@ -69,7 +76,7 @@ void    PhoneBook::AddContact() {
         std::getline(std::cin, input);
         if (std::cin.eof())
 			    exit(0);
-        if (input.empty()) {
+        if (input.empty() || check_input(input) == 1) {
             std::cout << "Darkest Secret cannot be empty. Please try again: ";
         } else {
             this->contact[this->index].SetDarkestSecret(input);
@@ -107,7 +114,6 @@ void  PhoneBook::PrintContact(int i) {
 void PhoneBook::SearchContact() {
   int input;
   std::string input_;
-  
   std::cout << std::right << "| ";
   PrintColumn("Index");
   PrintColumn("First Name");
@@ -119,8 +125,11 @@ void PhoneBook::SearchContact() {
     PrintList(i);
     std::cout << std::endl;
   }
-
   while (true) {
+	if (this->contact[0].GetFirstName().empty()) {
+		std::cout << "There is not a single contact ADD one first" << std::endl;
+		break;
+	}
     std::cout << "Enter index of the contact to search (0 to " << this->max - 1 << "): ";
     std::getline(std::cin, input_);
     if (std::cin.eof())

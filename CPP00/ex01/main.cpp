@@ -7,15 +7,15 @@ int main(void)
 
     while (1)
     {
-        std::cout << "Chose either (Add, Search, Exit)" << std::endl;
+        std::cout << "Chose either (ADD, SEARCH, EXIT)" << std::endl;
         std::getline(std::cin, input);
 		if (std::cin.eof())
 			exit(0);
-        if (input.compare("Add") == 0)
+        if (input.compare("ADD") == 0)
             Phonebook.AddContact();
-        else if (input.compare("Search") == 0)
+        else if (input.compare("SEARCH") == 0)
             Phonebook.SearchContact();
-        else if (input.compare("Exit") == 0)
+        else if (input.compare("EXIT") == 0)
             Phonebook.ExitProgram();
         else
             std::cout << "Input is incorrect but Happy New Year ;)" << std::endl;
