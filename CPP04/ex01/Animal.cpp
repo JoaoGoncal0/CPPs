@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 15:40:50 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/14 15:44:05 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/14 15:45:10 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/14 17:06:18 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ Animal &Animal::operator=(const Animal &other) {
     return (*this);
 }
 
-std::string Animal::getType() const {
-    return (_type);
-}
-
 void Animal::makeSound() const {
     std::cout << "Animal makes a sound!" << std::endl;
+}
+
+std::string Animal::getType() const {
+    return (_type);
 }

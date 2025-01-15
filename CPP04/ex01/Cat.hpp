@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 15:41:08 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/14 15:41:09 by jomendes         ###   ########.fr       */
+/*   Created: 2025/01/14 15:44:59 by jomendes          #+#    #+#             */
+/*   Updated: 2025/01/14 17:04:16 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef CAT_H
+# define CAT_H
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class   Dog:  public Animal {
+class   Cat:  public Animal {
 
+	private:
+		Brain *_brain;
     public:
-        Dog();
-        virtual ~Dog();
-        Dog(const Dog &copy);
-        Dog &operator=(const Dog &other);
+        Cat();
+        virtual ~Cat();
+        Cat(const Cat &copy);
+        Cat &operator=(const Cat &other);
 
-        void makeSound() const;
+        void		makeSound() const;
+		void		setIdea(int index, std::string idea);
+		std::string	getIdea(int index);
 };
 
 #endif
