@@ -2,14 +2,13 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
 
-NAME = Polymorphism
+NAME = Easyfind
 
 CC = c++ -Wall -Werror -Wextra -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp \
-		Dog.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp 
 
 OBJ = $(SRCS:.cpp=.o)
 

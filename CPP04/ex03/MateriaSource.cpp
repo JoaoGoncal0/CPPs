@@ -20,8 +20,8 @@ MateriaSource::MateriaSource(const MateriaSource &copy) {
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy) {
     if (this != &copy) {
         for (int i = 0; i < 4; i++) {
-            if (_materia[i]) delete _materia[i]; // Delete the existing materia
-            _materia[i] = (copy._materia[i] ? copy._materia[i]->clone() : NULL); // Copy the new materia
+            if (_materia[i]) delete _materia[i];
+            _materia[i] = (copy._materia[i] ? copy._materia[i]->clone() : NULL);
         }
     }
     return *this;

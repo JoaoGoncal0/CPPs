@@ -4,7 +4,7 @@ RESET = \033[0m
 
 NAME = Character
 
-CC = g++ -Wall -Werror -Wextra -std=c++98
+CC = c++ -Wall -Werror -Wextra -std=c++98
 
 RM = rm -f
 

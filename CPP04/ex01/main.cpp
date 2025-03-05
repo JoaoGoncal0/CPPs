@@ -6,7 +6,7 @@
 /*   By: jomendes <jomendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 17:14:35 by jomendes          #+#    #+#             */
-/*   Updated: 2025/01/14 17:55:44 by jomendes         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:32:45 by jomendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int main() {
     dogCopy->setIdea(0, "RUN RUN RUN");
 
     std::cout << dogCopy->getIdea(0) << std::endl;
+	std::cout << dog->getIdea(0) << std::endl;
 	std::cout << dogCopy->getIdea(1) << std::endl;
 
     delete dogCopy;
