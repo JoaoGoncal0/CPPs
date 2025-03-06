@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Presidential Pardon Form", 25, 5), target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery Creation Form", 25, 5), target(target) {
 	std::cout << "ShrubberyCreationForm Constructor" << std::endl;
 }
 
@@ -27,30 +27,32 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return this->target;
 }
 
-void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+int    ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+    if (AForm::execute(executor) == 1)
+    { 
+        std::string shrub = this->target + "_shrubbery";
+        std::ofstream file(shrub.c_str());
 
-    AForm::execute(executor);
-
-    std::string shrub = this->target + "_shrubbery";
-    std::ofstream file(shrub.c_str());
-
-    if (!file) {
-        std::cerr << "Error on File Creation" << std::endl;
-        return;
+        if (!file) {
+            std::cerr << "Error on File Creation" << std::endl;
+            return -1;
+        }
+        if (file.is_open())
+        {
+            file << "          ^\n"
+                    "         ^*^\n"
+                    "        *^o^*\n"
+                    "       ^*o@o*^\n"
+                    "      *@o@o@o@*\n"
+                    "     ^o@o#@o@o^*\n"
+                    "    *o@o#o@o#o@**\n"
+                    "   ^@o#o@o#o@o#o^*\n"
+                    "  *@o#o@o#o@o#o@o**\n"
+                    "         |||\n"
+                    "         |||" << std::endl;
+            }
+            file.close();
+            return 1;           
+        }
+        return -1;
     }
-
-    file << "          ^\n"
-            "         ^*^\n"
-            "        *^o^*\n"
-            "       ^*o@o*^\n"
-            "      *@o@o@o@*\n"
-            "     ^o@o#@o@o^*\n"
-            "    *o@o#o@o#o@**\n"
-            "   ^@o#o@o#o@o#o^*\n"
-            "  *@o#o@o#o@o#o@o**\n"
-            "         |||\n"
-            "         |||" << std::endl;
-
-    file.close();
-    std::cout << "Shrubbery created in file: " << shrub << std::endl;
-}

@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Presidential Pardon Form", 25, 5), target(target) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Robotomy Request Form", 25, 5), target(target) {
 	std::cout << "RobotomyRequestForm Constructor" << std::endl;
 }
 
@@ -27,17 +27,20 @@ std::string RobotomyRequestForm::getTarget() const{
 	return this->target;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+int RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
-    AForm::execute(executor);
+    if (AForm::execute(executor) == 1)
+	{
+		std::srand(std::time(0));
+    	std::cout << "Make Some Drilling Noisessssss" << std::endl;
 
-    std::srand(std::time(0));
-    std::cout << "Make Some Drilling Noisessssss" << std::endl;
+    	int chance = std::rand() % 2;
 
-    int chance = std::rand() % 2;
-
-    if (chance)
-        std::cout << this->target << " just got Robotomized! A new kind has been born!!!" << std::endl;
-    else
-        std::cout << this->target << " just dodged the Robotomization! Viktor can't handle his might!" << std::endl;
+    	if (chance)
+    	    std::cout << this->target << " just got Robotomized! A new kind has been born!!!" << std::endl;
+    	else
+    	    std::cout << this->target << " just dodged the Robotomization! Viktor can't handle his might!" << std::endl;
+		return 1;
+	}
+	return -1;
 }

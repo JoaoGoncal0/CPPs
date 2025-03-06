@@ -32,19 +32,18 @@ AForm *Intern::makeForm(const std::string formName, const std::string &formTarge
 	{
 		if(formName.compare(forms[i]) == 0)
 		{
+			std::cout << "Intern is creating form: " << formName << std::endl; // 🛠 Debug
+
 			switch(i) {
 				case 0:
-				return new PresidentialPardonForm(formTarget);
-				break;
+					return new PresidentialPardonForm(formTarget);
 				case 1:
-				return new RobotomyRequestForm(formTarget);
-				break;
+					return new RobotomyRequestForm(formTarget);
 				case 2:
-				return new ShrubberyCreationForm(formTarget);
-				break;
+					return new ShrubberyCreationForm(formTarget);
 			}
 		}
 	}
 	std::cout << "The Intern cant do magic, the Form doenst exist so maybe give a name that is correct" << std::endl;
-	return NULL;
+	return nullptr;
 }

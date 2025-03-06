@@ -14,22 +14,24 @@ int main() {
 		AForm* rrf;
 
 		std::cout << std::endl;
-		rrf = I.makeForm("robotomy request", "Bender");
-
-		if(rrf != NULL)
-		{
-			Neymar.signForm(*rrf);
-			Neymar.executeForm(*rrf);
-			delete rrf;
-		}
-		std::cout << std::endl;
 		rrf = I.makeForm("presidential pardon", "Bender");
+		if(rrf != NULL)
+		{
+			Neymar.signForm(*rrf);
+			Neymar.executeForm(*rrf);
+			delete rrf;
+			rrf = nullptr;
+		}
+		rrf = I.makeForm("robotomy request", "Bender");
+		std::cout << std::endl;
 
 		if(rrf != NULL)
 		{
 			Neymar.signForm(*rrf);
 			Neymar.executeForm(*rrf);
 			delete rrf;
+			rrf = nullptr;
+
 		}
 		std::cout << std::endl;
 		rrf = I.makeForm("shrubbery creation", "Bender");
@@ -39,6 +41,7 @@ int main() {
 			Neymar.signForm(*rrf);
 			Neymar.executeForm(*rrf);
 			delete rrf;
+			rrf = nullptr;
 		}
 		std::cout << std::endl;
 		rrf = I.makeForm("Some bullshit", "Bender");

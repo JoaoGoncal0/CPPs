@@ -27,9 +27,11 @@ std::string PresidentialPardonForm::getTarget() const{
 	return this->target;
 }
 
-void    PresidentialPardonForm::execute(Bureaucrat const &executor) const {
+int    PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 
-    AForm::execute(executor);
-
-    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox (The Hitchhiker's Guide to the Galaxy)" << std::endl;
+    if (AForm::execute(executor) == 1) {
+		std::cout << this->target << " has been pardoned by Zaphod Beeblebrox (The Hitchhiker's Guide to the Galaxy)" << std::endl;
+		return 1;
+	}
+	return -1;
 }

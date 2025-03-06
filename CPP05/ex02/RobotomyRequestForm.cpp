@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Presidential Pardon Form", 25, 5), target(target) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Robotomy Request Form", 25, 5), target(target) {
 	std::cout << "RobotomyRequestForm Constructor" << std::endl;
 }
 

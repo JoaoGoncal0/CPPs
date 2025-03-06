@@ -13,7 +13,7 @@ int main() {
 
         PresidentialPardonForm presForm("Criminal");
         RobotomyRequestForm robotForm("Test Subject");
-        ShrubberyCreationForm shrubForm("Garden");
+        ShrubberyCreationForm shrubForm("OIOI");
 
         std::cout << "\n--- Tentando assinar os formulários ---\n";
         bob.signForm(presForm);
