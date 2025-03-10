@@ -13,12 +13,15 @@
 #include "Array.hpp"
 
 template <typename T>
-Array<T>::Array() : data(nullptr), array_size(0) {
+Array<T>::Array() : data(nullptr), array_size(100) {
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) : data(nullptr), array_size(n) {
-	data = new T[array_size];
+	if (n > 0)
+		data = new T[array_size];
+	else
+		data = nullptr;
 }
 
 template <typename T>
@@ -28,8 +31,12 @@ Array<T>::~Array() {
 
 template <typename T>
 Array<T>::Array(const Array &copy) : array_size(copy.array_size) {
-	if (this != &copy)
-		*this = copy;
+	if (array_size > 0) {
+        data = new T[array_size];
+        for (unsigned int i = 0; i < array_size; i++) {
+            data[i] = copy.data[i];
+        }
+    }
 }
 
 template <typename T>
@@ -37,10 +44,14 @@ Array<T> &Array<T>::operator=(const Array &other) {
 	if (this != &other) {
 		delete[] data;
 		array_size = other.array_size;
-		data = new T[array_size];
-		for (unsigned int i; i < array_size; i++) {
-			data[i] = other.data[i];
+		if (array_size > 0) {
+			data = new T[array_size];
+			for (unsigned int i = 0; i < array_size; i++) {
+				data[i] = other.data[i];
+			}
 		}
+		else
+			data = nullptr;
 	}
 	return (*this);
 }

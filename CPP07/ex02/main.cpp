@@ -15,6 +15,11 @@ int main() {
 		std::cout << std::endl << "----------------" << std::endl << std::endl;
 
 		Array<int> c(b);
+		std::cout << "Array c size: " << c.size() << std::endl;
+
+		Array<int> d(2);
+        d = b;
+        std::cout << "Array d size after assignment: " << d.size() << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
