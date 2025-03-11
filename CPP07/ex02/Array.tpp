@@ -18,10 +18,10 @@ Array<T>::Array() : data(nullptr), array_size(100) {
 
 template <typename T>
 Array<T>::Array(unsigned int n) : data(nullptr), array_size(n) {
-	if (n > 0)
-		data = new T[array_size];
-	else
-		data = nullptr;
+	if (n == 0) {
+        throw std::invalid_argument("Array size must be greater than zero!");
+    }
+    data = new T[array_size];
 }
 
 template <typename T>
