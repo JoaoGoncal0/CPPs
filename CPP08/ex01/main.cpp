@@ -15,7 +15,7 @@ int main() {
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
 
-        std::cout << "\n==== TEST 2: Large Span (10,000 numbers) ====" << std::endl;
+        std::cout << "==== TEST 2: Large Span (10,000 numbers) ====" << std::endl;
         Span bigSpan(10000);
         bigSpan.fillSpan();
 
